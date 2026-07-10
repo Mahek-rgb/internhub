@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>InternHub | Find Your Dream Internship</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Shared Style & Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#6cf8bb",
+                    "surface-container-low": "#f3f4f5",
+                    "surface": "#f8f9fa",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#c0c1ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container": "#edeeef",
+                    "on-tertiary-container": "#f1eeff",
+                    "on-primary-fixed": "#00174b",
+                    "on-background": "#191c1d",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-container": "#eeefff",
+                    "inverse-primary": "#b4c5ff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "on-tertiary-fixed": "#07006c",
+                    "inverse-surface": "#2e3132",
+                    "primary": "#004ac6",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-dim": "#d9dadb",
+                    "inverse-on-surface": "#f0f1f2",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#002113",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-container": "#585be6",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-surface": "#191c1d",
+                    "tertiary-fixed": "#e1e0ff",
+                    "primary-container": "#2563eb",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9fa",
+                    "outline-variant": "#c3c6d7",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary": "#3e3fcc",
+                    "surface-container-high": "#e7e8e9",
+                    "outline": "#737686",
+                    "secondary": "#006c49",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#0053db",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-highest": "#e1e3e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "40px",
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "lg": "24px",
+                    "container-max": "1280px",
+                    "md": "16px",
+                    "unit": "4px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F9FAFB;
+            color: #191c1d;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .card-shadow {
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 4px 6px rgba(0,0,0,0.02);
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0px 10px 15px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-xl py-md max-w-full bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-xl">
+<a class="text-title-lg font-title-lg font-black text-primary" href="index.html">InternHub</a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="listings.html">Internships</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-md text-body-md" href="listings.html">Jobs</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-md text-body-md" href="post-job.html">Post Internship</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-label-md focus:ring-2 focus:ring-primary w-64" placeholder="Search internships..." type="text"/>
+</div>
+<a class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors" href="profile.html"><span class="material-symbols-outlined" data-icon="account_circle">account_circle</span></a>
+<a class="bg-primary text-on-primary px-lg py-2 rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all inline-block text-center" href="admin.html">Login</a>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-24 px-xl max-w-container-max mx-auto flex flex-col items-center text-center">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-[120%] -z-10 opacity-20 pointer-events-none">
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl animate-fade-in-up">
+                Find Your Dream Internship Today
+            </h1>
+<p class="mt-md text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+                Connect with top companies and accelerate your career path with curated internship opportunities across the globe.
+            </p>
+<div class="mt-xl w-full max-w-4xl glass-card p-sm rounded-xl card-shadow flex flex-col md:flex-row items-center gap-sm">
+<div class="flex-1 flex items-center gap-sm px-md w-full border-b md:border-b-0 md:border-r border-outline-variant py-md">
+<span class="material-symbols-outlined text-primary">work</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md font-body-md" placeholder="What role are you looking for?" type="text"/>
+</div>
+<div class="flex-1 flex items-center gap-sm px-md w-full py-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md font-body-md" placeholder="Preferred location" type="text"/>
+</div>
+<a class="bg-primary text-on-primary px-xl py-md rounded-lg font-title-lg text-title-lg w-full md:w-auto hover:bg-primary-container transition-colors shadow-lg shadow-primary/20 inline-block text-center" href="listings.html">Search</a>
+</div>
+<div class="mt-lg flex flex-wrap justify-center gap-md">
+<span class="text-label-md font-label-md text-outline">Popular:</span>
+<a class="text-label-md font-label-md text-primary hover:underline" href="#">Remote</a>
+<a class="text-label-md font-label-md text-primary hover:underline" href="#">Software Engineering</a>
+<a class="text-label-md font-label-md text-primary hover:underline" href="#">Marketing</a>
+<a class="text-label-md font-label-md text-primary hover:underline" href="#">Graphic Design</a>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-surface-container-lowest py-xl">
+<div class="max-w-container-max mx-auto px-xl grid grid-cols-2 lg:grid-cols-4 gap-xl">
+<div class="text-center">
+<div class="text-headline-lg font-headline-lg text-primary">10,000+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Active Companies</div>
+</div>
+<div class="text-center border-l border-outline-variant">
+<div class="text-headline-lg font-headline-lg text-primary">5 Lakh+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Total Internships</div>
+</div>
+<div class="text-center border-l border-outline-variant">
+<div class="text-headline-lg font-headline-lg text-primary">2.5M+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Registered Students</div>
+</div>
+<div class="text-center border-l border-outline-variant">
+<div class="text-headline-lg font-headline-lg text-primary">120+</div>
+<div class="text-label-md font-label-md text-on-surface-variant">Career Paths</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-24 px-xl max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Explore by Category</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Find opportunities tailored to your domain</p>
+</div>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-xs" href="#">
+                    View All Categories <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Category Cards -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">engineering</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Engineering</h3>
+<p class="text-label-sm font-label-sm text-outline">1,240 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">palette</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Design</h3>
+<p class="text-label-sm font-label-sm text-outline">850 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">business_center</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">MBA/Business</h3>
+<p class="text-label-sm font-label-sm text-outline">2,100 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">video_library</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Media</h3>
+<p class="text-label-sm font-label-sm text-outline">430 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">insights</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Data Science</h3>
+<p class="text-label-sm font-label-sm text-outline">670 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">code</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Development</h3>
+<p class="text-label-sm font-label-sm text-outline">3,400 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">campaign</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Marketing</h3>
+<p class="text-label-sm font-label-sm text-outline">1,120 Openings</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover group text-center flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-fixed flex items-center justify-center rounded-full text-primary mb-md group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined scale-125">account_balance</span>
+</div>
+<h3 class="font-title-lg text-title-lg mb-xs">Finance</h3>
+<p class="text-label-sm font-label-sm text-outline">980 Openings</p>
+</div>
+</div>
+</section>
+<!-- Featured Internships -->
+<section class="bg-surface-container-low py-24 px-xl">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Internships</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Top-tier opportunities from premium partners</p>
+</div>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Internship Card 1 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-outline-variant p-2">
+<img class="w-full h-full object-contain" data-alt="A clean, minimalist logo for a high-tech software company, featuring sharp geometric lines and a vibrant primary blue color palette against a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6c5HQYYnI1ttZaBkT6ci_iseHclppIhEIYIz6dK84zF_0-5VFN5xnw-QrR0r_edezRc4Td_3mg5iSK4o78sGYxsfhcXW1728bSWtt6jcfDRDzNXhaB9HCaaneUQi7l8ZPu5a32AV1NntsXqzEumv1hyKwTH7pbr5b7hexiT0cDe7O4pqW-E2UDawbjro0Y8lkq6LmYsLdMzoB1FXE_t0EKtASu0HWr8FEChe9MBt4DiUtvt5xjlWNDUQfKln4s9DrnAWaL9VwLcRt"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Active</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Product Designer Intern</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">Global Tech Solutions Inc.</p>
+<div class="mt-auto pt-md border-t border-outline-variant grid grid-cols-2 gap-sm text-label-md font-label-md text-outline">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">schedule</span> 6 Months
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> Remote
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">payments</span> $2,500/mo
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">event</span> Starts July
+                            </div>
+</div>
+<div class="mt-lg flex gap-sm">
+<a class="flex-1 bg-primary text-on-primary py-2 rounded-lg font-label-md text-label-md hover:opacity-90 inline-block text-center" href="apply.html">Apply Now</a>
+<button class="p-2 rounded-lg border border-outline-variant text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Internship Card 2 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-outline-variant p-2">
+<img class="w-full h-full object-contain" data-alt="A sophisticated brand mark for a financial services firm, utilizing deep navy blue and silver tones with a professional, serif-style initial in a modern square frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_BM_s1k0h1qGHgsYAJnfZB7s9G4SZYiCe5mdLdcIujBVNuudc8usjAe1BU8FUpHFXqzB-mkuRchOL0aQsw8sT5Tm8DCsiOJCj5siTsEmboLX4MUQ0d2dghs7CWTGd8CSGK137sPtUUIOy4PGdvyxpm_reyS7qVo9lRANPbm-N2e03csuDXeI4mHBrE8wBCfC222bDMepvfcNkQ9vqBWSm_IgbX6z358_1VEYwlzTOION1Pp3vvHr-9ZSJa6BovNjodF37iqY8vm-m"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Active</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Financial Analyst</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">Apex Capital Partners</p>
+<div class="mt-auto pt-md border-t border-outline-variant grid grid-cols-2 gap-sm text-label-md font-label-md text-outline">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">schedule</span> 3 Months
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> New York, US
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">payments</span> $3,200/mo
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">event</span> Immediate
+                            </div>
+</div>
+<div class="mt-lg flex gap-sm">
+<a class="flex-1 bg-primary text-on-primary py-2 rounded-lg font-label-md text-label-md hover:opacity-90 inline-block text-center" href="apply.html">Apply Now</a>
+<button class="p-2 rounded-lg border border-outline-variant text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+<!-- Internship Card 3 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant card-shadow card-shadow-hover flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center border border-outline-variant p-2">
+<img class="w-full h-full object-contain" data-alt="A creative agency logo featuring an abstract organic shape in shades of teal and coral, conveying innovation and artistic fluidity against a soft neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIHKfcVKR-xOWfgUU9pZ1lBHyBRPDQFlpyDL6dfQmd1PhEvr1oyaIxpyxKeEzHCBWWnew-fHUTe8-zH1Vm_9ujnuiCmDyn4vF-tTC-Q-LYFHBctVbkb_-Pb2Bsb7XrItQwDEGGcT2GZvnaIacY8IXDwvFGWZLx1LZ2-nqsdEGWHw-J0g3zEyrQS8y0RJZ8R19CpjEV6IaaKGRyKL6-WKmyMAR-ceU7acbO8kjUEU37Ch_Tn7u52oOfI8aDFnbpQ4Bme9ehjl_sNJ-i"/>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">Active</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Content Strategist</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">Flow Creative Media</p>
+<div class="mt-auto pt-md border-t border-outline-variant grid grid-cols-2 gap-sm text-label-md font-label-md text-outline">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">schedule</span> 4 Months
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">location_on</span> Hybrid
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">payments</span> $1,800/mo
+                            </div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">event</span> Starts Aug
+                            </div>
+</div>
+<div class="mt-lg flex gap-sm">
+<a class="flex-1 bg-primary text-on-primary py-2 rounded-lg font-label-md text-label-md hover:opacity-90 inline-block text-center" href="apply.html">Apply Now</a>
+<button class="p-2 rounded-lg border border-outline-variant text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-xl text-center">
+<a class="border-2 border-primary text-primary px-xl py-3 rounded-lg font-title-lg text-title-lg hover:bg-primary-fixed transition-colors inline-block text-center" href="listings.html">Browse All 50,000+ Opportunities</a>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-24 px-xl max-w-container-max mx-auto">
+<div class="bg-primary rounded-2xl p-xl flex flex-col lg:flex-row items-center justify-between gap-xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+</div>
+<div class="relative z-10 text-on-primary lg:max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Never miss an opportunity</h2>
+<p class="text-body-lg font-body-lg opacity-90">Get weekly updates on the best internships, career tips, and hiring events delivered straight to your inbox.</p>
+</div>
+<div class="relative z-10 w-full lg:max-w-md">
+<form class="flex flex-col sm:flex-row gap-sm">
+<input class="flex-1 px-md py-3 rounded-lg border-none text-on-surface focus:ring-2 focus:ring-secondary-fixed" placeholder="Enter your email" type="email"/>
+<button class="bg-secondary-container text-on-secondary-container px-lg py-3 rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all" type="submit">Subscribe</button>
+</form>
+<p class="mt-sm text-label-sm font-label-sm text-on-primary opacity-70">Join 1M+ subscribers. We respect your privacy.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-xl mt-auto flex flex-col items-center gap-md bg-inverse-surface">
+<div class="w-full max-w-container-max flex flex-col md:flex-row justify-between items-start md:items-center gap-lg border-b border-outline-variant/20 pb-xl">
+<span class="text-title-lg font-title-lg font-bold text-inverse-on-surface">InternHub</span>
+<div class="flex flex-wrap gap-lg">
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-label-sm text-label-sm" href="#">About Us</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-label-sm text-label-sm" href="#">Hire Interns</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-label-sm text-label-sm" href="#">Terms of Service</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-label-sm text-label-sm" href="#">Privacy Policy</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-label-sm text-label-sm" href="#">Contact</a>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-inverse-on-surface cursor-pointer hover:text-primary-fixed transition-all">public</span>
+<span class="material-symbols-outlined text-inverse-on-surface cursor-pointer hover:text-primary-fixed transition-all">rss_feed</span>
+<span class="material-symbols-outlined text-inverse-on-surface cursor-pointer hover:text-primary-fixed transition-all">group</span>
+</div>
+</div>
+<div class="pt-md text-center">
+<p class="text-body-md font-body-md text-surface-variant opacity-60">© 2024 InternHub. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for smooth scrolling and hover effects
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-2', 'ring-primary');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-2', 'ring-primary');
+            });
+        }
+    </script>
+</body></html>

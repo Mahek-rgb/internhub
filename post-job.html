@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post a New Opportunity | InternHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#d9dadb",
+                "surface-container-low": "#f3f4f5",
+                "on-secondary-fixed-variant": "#005236",
+                "on-primary-fixed-variant": "#003ea8",
+                "tertiary": "#3e3fcc",
+                "primary-fixed": "#dbe1ff",
+                "on-secondary": "#ffffff",
+                "tertiary-fixed-dim": "#c0c1ff",
+                "on-tertiary": "#ffffff",
+                "surface-bright": "#f8f9fa",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#07006c",
+                "inverse-surface": "#2e3132",
+                "surface": "#f8f9fa",
+                "surface-variant": "#e1e3e4",
+                "secondary-fixed-dim": "#4edea3",
+                "on-primary": "#ffffff",
+                "surface-tint": "#0053db",
+                "on-surface": "#191c1d",
+                "surface-container-high": "#e7e8e9",
+                "on-primary-container": "#eeefff",
+                "background": "#f8f9fa",
+                "tertiary-fixed": "#e1e0ff",
+                "on-secondary-fixed": "#002113",
+                "surface-container-lowest": "#ffffff",
+                "outline": "#737686",
+                "on-error-container": "#93000a",
+                "secondary": "#006c49",
+                "primary-container": "#2563eb",
+                "on-tertiary-container": "#f1eeff",
+                "inverse-primary": "#b4c5ff",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#585be6",
+                "on-secondary-container": "#00714d",
+                "surface-container": "#edeeef",
+                "secondary-fixed": "#6ffbbe",
+                "primary-fixed-dim": "#b4c5ff",
+                "on-background": "#191c1d",
+                "error": "#ba1a1a",
+                "on-surface-variant": "#434655",
+                "outline-variant": "#c3c6d7",
+                "inverse-on-surface": "#f0f1f2",
+                "primary": "#004ac6",
+                "secondary-container": "#6cf8bb",
+                "on-tertiary-fixed-variant": "#2f2ebe",
+                "on-primary-fixed": "#00174b",
+                "surface-container-highest": "#e1e3e4"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "sm": "8px",
+                "md": "16px",
+                "container-max": "1280px",
+                "lg": "24px",
+                "xl": "40px",
+                "xs": "4px",
+                "unit": "4px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "label-md": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "display-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg": ["Inter"],
+                "title-lg": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .glass-panel { backdrop-filter: blur(8px); background-color: rgba(255, 255, 255, 0.8); }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex w-64 h-screen flex-col p-md sticky top-0 bg-surface border-r border-outline-variant">
+<div class="mb-xl px-sm">
+<h1 class="text-headline-md font-headline-md text-primary">Admin Panel</h1>
+<p class="text-label-md font-label-md text-on-surface-variant">Recruiter Account</p>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="admin.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="listings.html">
+<span class="material-symbols-outlined">work</span>
+<span class="font-label-md text-label-md">Listings</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="applications.html">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-label-md text-label-md">Applications</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="messages.html">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="profile.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-sm pt-md border-t border-outline-variant">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="help.html">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg font-medium" href="login.html">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-xl py-md bg-surface-container-lowest shadow-sm md:static md:shadow-none">
+<div class="flex items-center gap-md"><a class="text-title-lg font-title-lg font-black text-primary" href="index.html">InternHub</a></div>
+<div class="hidden md:flex gap-lg">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-md text-body-md" href="index.html">Internships</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-body-md text-body-md" href="index.html">Jobs</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="post-job.html">Post Internship</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary">account_circle</button>
+</div>
+</header>
+<section class="flex-1 overflow-y-auto px-md md:px-xl py-xl mt-16 md:mt-0">
+<div class="max-w-[800px] mx-auto">
+<!-- Stepper Progress -->
+<div class="mb-xl">
+<div class="flex items-center justify-between relative">
+<div class="absolute top-1/2 left-0 w-full h-[2px] bg-outline-variant -z-10 -translate-y-1/2"></div>
+<div class="absolute top-1/2 left-0 h-[2px] bg-primary -z-10 -translate-y-1/2 transition-all duration-500" id="step-line" style="width: 0%;"></div>
+<div class="flex flex-col items-center gap-sm bg-background px-xs">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold transition-colors" id="marker-1">1</div>
+<span class="text-label-sm font-label-sm text-primary">Details</span>
+</div>
+<div class="flex flex-col items-center gap-sm bg-background px-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold transition-colors" id="marker-2">2</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Specs</span>
+</div>
+<div class="flex flex-col items-center gap-sm bg-background px-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold transition-colors" id="marker-3">3</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Description</span>
+</div>
+<div class="flex flex-col items-center gap-sm bg-background px-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold transition-colors" id="marker-4">4</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Preview</span>
+</div>
+</div>
+</div>
+<!-- Form Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden min-h-[500px] flex flex-col">
+<form class="flex-1" id="job-form">
+<!-- Step 1: Basic Details -->
+<div class="p-xl step-transition block" id="step-1">
+<h2 class="text-headline-md font-headline-md mb-lg text-on-surface">Basic Opportunity Details</h2>
+<div class="grid grid-cols-1 gap-lg">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Job Title</label>
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-title" name="job-title" placeholder="e.g. Software Engineering Intern" required="" type="text"/>
+<p class="mt-xs text-label-sm font-label-sm text-outline">Keep it clear and specific.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Category</label>
+<select class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-category" name="job-category">
+<option value="Engineering">Engineering</option>
+<option value="Design">Design</option>
+<option value="Marketing">Marketing</option>
+<option value="Product Management">Product Management</option>
+<option value="Data Science">Data Science</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Work Type</label>
+<div class="flex bg-surface-container rounded-lg p-xs h-[52px]">
+<button class="flex-1 flex items-center justify-center gap-xs rounded-md font-label-md text-label-md transition-all bg-surface-container-lowest shadow-sm text-primary" id="btn-remote" onclick="setWorkType('Remote')" type="button">
+<span class="material-symbols-outlined text-[18px]">home_work</span> Remote
+                                            </button>
+<button class="flex-1 flex items-center justify-center gap-xs rounded-md font-label-md text-label-md transition-all text-on-surface-variant hover:bg-surface-container-high" id="btn-onsite" onclick="setWorkType('On-site')" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span> On-site
+                                            </button>
+</div>
+<input id="work-type" name="work-type" type="hidden" value="Remote"/>
+</div>
+</div>
+<div class="hidden" id="location-container">
+<label class="block text-label-md font-label-md text-on-surface mb-xs">City/Office Location</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">map</span>
+<input class="w-full pl-xl p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-location" name="job-location" placeholder="e.g. San Francisco, CA" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2: Specs & Compensation -->
+<div class="p-xl step-transition hidden" id="step-2">
+<h2 class="text-headline-md font-headline-md mb-lg text-on-surface">Specifications &amp; Compensation</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Compensation Type</label>
+<select class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="comp-type" name="comp-type" onchange="toggleCompInput()">
+<option value="Paid">Paid (Stipend/Salary)</option>
+<option value="Unpaid">Unpaid / Academic Credit</option>
+</select>
+</div>
+<div id="stipend-input-container">
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Stipend Amount (Monthly)</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-outline font-bold">$</span>
+<input class="w-full pl-xl p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-stipend" name="job-stipend" placeholder="2500" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Duration</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">calendar_today</span>
+<input class="w-full pl-xl p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-duration" name="job-duration" placeholder="e.g. 3 Months / 6 Months" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Weekly Commitment</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 material-symbols-outlined text-outline">schedule</span>
+<input class="w-full pl-xl p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-hours" name="job-hours" placeholder="e.g. 40 hrs/week (Full-time)" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Description & Requirements -->
+<div class="p-xl step-transition hidden" id="step-3">
+<h2 class="text-headline-md font-headline-md mb-lg text-on-surface">Job Description &amp; Requirements</h2>
+<div class="flex flex-col gap-lg">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Overview</label>
+<textarea class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-desc" name="job-desc" placeholder="Briefly describe the role and the company's mission..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Key Responsibilities</label>
+<textarea class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-resp" name="job-resp" placeholder="• Build scalable web applications
+• Collaborate with cross-functional teams..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-xs">Requirements</label>
+<textarea class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all text-body-md font-body-md" id="job-reqs" name="job-reqs" placeholder="• Proficiency in React and Tailwind
+• Experience with Git..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<!-- Step 4: Preview -->
+<div class="p-xl step-transition hidden" id="step-4">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="text-headline-md font-headline-md text-on-surface">Preview Your Listing</h2>
+<span class="px-md py-xs bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm">Active Preview</span>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden">
+<div class="p-lg border-b border-outline-variant bg-surface-container-lowest flex flex-col md:flex-row md:items-center gap-lg">
+<div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[32px]">business</span>
+</div>
+<div class="flex-1">
+<h3 class="text-title-lg font-title-lg text-on-surface" id="preview-title">Opportunity Title</h3>
+<div class="flex flex-wrap gap-md mt-xs">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-label-md font-label-md" id="preview-location">Remote</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span class="text-label-md font-label-md" id="preview-stipend">$2,500/mo</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="text-label-md font-label-md" id="preview-duration">3 Months</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-lg bg-surface-container-lowest max-w-[720px]">
+<h4 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Role Description</h4>
+<p class="text-body-md font-body-md text-on-surface mb-lg" id="preview-desc">Description content goes here...</p>
+<h4 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Key Responsibilities</h4>
+<div class="text-body-md font-body-md text-on-surface mb-lg whitespace-pre-wrap" id="preview-resp">Responsibilities content...</div>
+<h4 class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider mb-sm">Requirements</h4>
+<div class="text-body-md font-body-md text-on-surface whitespace-pre-wrap" id="preview-reqs">Requirements content...</div>
+</div>
+</div>
+</div>
+</form>
+<!-- Form Footer Controls -->
+<div class="p-lg bg-surface-container-low border-t border-outline-variant flex justify-between items-center">
+<button class="px-xl py-md border border-primary text-primary rounded-lg font-bold hover:bg-surface transition-all disabled:opacity-30 disabled:pointer-events-none" disabled="" id="prev-btn" onclick="changeStep(-1)" type="button">
+                            Back
+                        </button>
+<button class="px-xl py-md bg-primary text-on-primary rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-sm" id="next-btn" onclick="handleFormNavigation()" type="button">
+                            Next Step
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-xl px-xl mt-auto flex flex-col items-center gap-md bg-inverse-surface">
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-body-md text-body-md" href="#">About Us</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-body-md text-body-md" href="post-job.html">Hire Interns</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-surface-variant opacity-80 hover:text-primary-fixed transition-colors underline font-body-md text-body-md" href="help.html">Contact</a>
+</div>
+<p class="text-label-sm font-label-sm text-surface-variant opacity-80">© 2024 InternHub. All rights reserved.</p>
+</footer>
+</main>
+<script type="module">
+    import { db } from './firebase-config.js';
+    import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    window.saveStepOneData = async () => {
+        const title = document.getElementById('job-title').value;
+        const category = document.getElementById('job-category').value;
+        const workType = document.getElementById('work-type').value;
+
+        if (!title) {
+            alert('Please fill in the Job Title.');
+            return false;
+        }
+
+        try {
+            await addDoc(collection(db, "jobs"), {
+                title,
+                category,
+                workType,
+                status: 'draft',
+                createdAt: serverTimestamp(),
+                // Pre-populating empty fields for the rest of steps to be updated later
+                stipend: "",
+                duration: "",
+                hours: "",
+                description: "",
+                responsibilities: "",
+                requirements: ""
+            });
+            console.log("Basic details saved to Firestore");
+            return true;
+        } catch (e) {
+            console.error("Error adding document: ", e);
+            alert("Failed to save progress. Check console.");
+            return false;
+        }
+    };
+
+    window.finalSubmit = async () => {
+        // In a real app, we'd update the existing doc. 
+        // For this task, we show a success message and redirect.
+        alert('Opportunity Published Successfully!');
+        window.location.href = 'listings.html';
+    };
+</script>
+<script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function updateStepper() {
+        const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+        document.getElementById('step-line').style.width = progress + '%';
+
+        for (let i = 1; i <= totalSteps; i++) {
+            const marker = document.getElementById('marker-' + i);
+            const label = marker.nextElementSibling;
+            
+            if (i < currentStep) {
+                marker.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span>';
+                marker.className = "w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold transition-colors";
+                label.className = "text-label-sm font-label-sm text-secondary";
+            } else if (i === currentStep) {
+                marker.innerText = i;
+                marker.className = "w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold transition-colors";
+                label.className = "text-label-sm font-label-sm text-primary";
+            } else {
+                marker.innerText = i;
+                marker.className = "w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-bold transition-colors";
+                label.className = "text-label-sm font-label-sm text-on-surface-variant";
+            }
+        }
+    }
+
+    async function handleFormNavigation() {
+        if (currentStep === 1) {
+            const success = await window.saveStepOneData();
+            if (success) {
+                changeStep(1);
+            }
+        } else if (currentStep === totalSteps) {
+            await window.finalSubmit();
+        } else {
+            changeStep(1);
+        }
+    }
+
+    function changeStep(delta) {
+        const nextStep = currentStep + delta;
+        if (nextStep < 1 || nextStep > totalSteps) return;
+
+        for (let i = 1; i <= totalSteps; i++) {
+            document.getElementById('step-' + i).classList.add('hidden');
+            document.getElementById('step-' + i).classList.remove('block');
+        }
+
+        currentStep = nextStep;
+        document.getElementById('step-' + currentStep).classList.remove('hidden');
+        document.getElementById('step-' + currentStep).classList.add('block');
+
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+
+        prevBtn.disabled = currentStep === 1;
+        
+        if (currentStep === totalSteps) {
+            nextBtn.innerText = 'Publish Listing';
+            nextBtn.classList.remove('bg-primary');
+            nextBtn.classList.add('bg-secondary');
+            updatePreview();
+        } else {
+            nextBtn.innerText = 'Next Step';
+            nextBtn.classList.add('bg-primary');
+            nextBtn.classList.remove('bg-secondary');
+        }
+
+        updateStepper();
+    }
+
+    function setWorkType(type) {
+        document.getElementById('work-type').value = type;
+        const btnRemote = document.getElementById('btn-remote');
+        const btnOnsite = document.getElementById('btn-onsite');
+        const locContainer = document.getElementById('location-container');
+
+        if (type === 'Remote') {
+            btnRemote.className = "flex-1 flex items-center justify-center gap-xs rounded-md font-label-md text-label-md transition-all bg-surface-container-lowest shadow-sm text-primary";
+            btnOnsite.className = "flex-1 flex items-center justify-center gap-xs rounded-md font-label-md text-label-md transition-all text-on-surface-variant hover:bg-surface-container-high";
+            locContainer.classList.add('hidden');
+        } else {
+            btnOnsite.className = "flex-1 flex items-center justify-center gap-xs rounded-md font-label-md text-label-md transition-all bg-surface-container-lowest shadow-sm text-primary";
+            btnRemote.className = "flex-1 flex items-center justify-center gap-xs rounded-md font-label-md text-label-md transition-all text-on-surface-variant hover:bg-surface-container-high";
+            locContainer.classList.remove('hidden');
+        }
+    }
+
+    function toggleCompInput() {
+        const type = document.getElementById('comp-type').value;
+        const container = document.getElementById('stipend-input-container');
+        if (type === 'Unpaid') {
+            container.classList.add('opacity-30', 'pointer-events-none');
+        } else {
+            container.classList.remove('opacity-30', 'pointer-events-none');
+        }
+    }
+
+    function updatePreview() {
+        document.getElementById('preview-title').innerText = document.getElementById('job-title').value || 'Opportunity Title';
+        const workType = document.getElementById('work-type').value;
+        const locationVal = document.getElementById('job-location').value;
+        document.getElementById('preview-location').innerText = workType === 'Remote' ? 'Remote' : (locationVal || 'On-site');
+        const compType = document.getElementById('comp-type').value;
+        const stipendVal = document.getElementById('job-stipend').value;
+        document.getElementById('preview-stipend').innerText = compType === 'Unpaid' ? 'Unpaid' : `$${stipendVal}/mo`;
+        document.getElementById('preview-duration').innerText = document.getElementById('job-duration').value || 'TBD Duration';
+        document.getElementById('preview-desc').innerText = document.getElementById('job-desc').value || 'No description provided.';
+        document.getElementById('preview-resp').innerText = document.getElementById('job-resp').value || 'No responsibilities listed.';
+        document.getElementById('preview-reqs').innerText = document.getElementById('job-reqs').value || 'No requirements listed.';
+    }
+</script>
+</body></html>
